@@ -15,9 +15,9 @@ defmodule MyAppWeb.CoreComponents do
   Icons are provided by [heroicons](https://heroicons.com). See `icon/1` for usage.
   """
   use Phoenix.Component
+  use Gettext, backend: MyAppWeb.Gettext
 
   alias Phoenix.LiveView.JS
-  import MyAppWeb.Gettext
 
   @doc """
   Renders a modal.
