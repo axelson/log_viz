@@ -33,11 +33,13 @@ defmodule MyAppWeb.Router do
     # you can use Plug.BasicAuth to set up some basic authentication
     # as long as you are also using SSL (which you should anyway).
     import Phoenix.LiveDashboard.Router
+    import LogViz.Router
 
     scope "/dev" do
       pipe_through :browser
 
       live_dashboard "/dashboard", metrics: MyAppWeb.Telemetry
+      log_viz "/logs"
       forward "/mailbox", Plug.Swoosh.MailboxPreview
     end
   end
